@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./timebased/throttle.js"></script>
+  </head>
+  <body>
+    <div style="height: 200vh; background-color: brown">
+      Scroll down to see the effect
+    </div>
+    <script>
+      // Attach the throttled function to the scroll event
+      window.addEventListener("scroll", throttledFunction);
+    </script>
+  </body>
+</html>

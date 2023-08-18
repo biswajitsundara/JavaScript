@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debouncing Test</title>
+  </head>
+  <body>
+    <h1>Debouncing Test</h1>
+
+    <script src="debounce.js"></script>
+    <script>
+      // Your testing code here
+      const debouncedFunction = debounce(() => {
+        console.log("Function debounced!");
+      }, 300);
+
+      window.addEventListener("resize", debouncedFunction);
+    </script>
+  </body>
+</html>
