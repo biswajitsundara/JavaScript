@@ -5,14 +5,17 @@ const name = {
 
 Function.prototype.mybind = function (...args) {
   let obj = this;
-  return function () {
-    obj.call(args[0]);
+  const params = args.slice(1);
+  return function (...args2) {
+    obj.apply(args[0], [...params, ...args2]);
   };
 };
 
-const printName = function () {
-  console.log(this.firstname + " " + this.lastName);
+const printName = function (hometown, state) {
+  console.log(
+    this.firstname + " " + this.lastName + " " + hometown + " " + state
+  );
 };
 
-const printMyname = printName.mybind(name);
-printMyname();
+const printMyname = printName.mybind(name, "Bhubaneswar");
+printMyname("Odisha");
